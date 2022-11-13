@@ -22,8 +22,8 @@
 	function changeTab(tab = "assets") {
 		tab == "assets" ? AssetDisplay = "block" : AssetDisplay = "none"
 		tab == "trade" ? TradeDisplay = "block" : TradeDisplay = "none"
-		tab == "assets" ? LiquidityDisplay = "block" : LiquidityDisplay = "none"
-		tab == "trade" ? StakingDisplay = "block" : StakingDisplay = "none"
+		tab == "liquidity" ? LiquidityDisplay = "block" : LiquidityDisplay = "none"
+		tab == "staking" ? StakingDisplay = "block" : StakingDisplay = "none"
 
 		btnTabClassAsset = AssetDisplay == "block" ? "bg-black-active" : "bg-black"
 		btnTabClassTrade = TradeDisplay == "block" ? "bg-black-active" : "bg-black"
