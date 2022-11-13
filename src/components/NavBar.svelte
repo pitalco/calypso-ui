@@ -39,6 +39,5 @@
   .connect-but:hover {
 	background-color: black;
     color: white;
-	border-width: 2px;
   }
 </style>

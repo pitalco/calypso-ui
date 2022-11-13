@@ -3,8 +3,33 @@
 </script>
 
 <script>
-	import Table from "../components/Table.svelte";
+	import Assets from "../components/Assets.svelte";
+	import Trade from "../components/Trade.svelte";
+	import Liquidity from "../components/Liquidity.svelte";
+	import Staking from "../components/Staking.svelte";
 	import { ButtonGroup, ButtonGroupItem } from 'flowbite-svelte';
+
+	let AssetDisplay = "block"
+	let TradeDisplay = "none"
+	let LiquidityDisplay = "none"
+	let StakingDisplay = "none"
+
+	let btnTabClassAsset = AssetDisplay == "block" ? "bg-black-active" : "bg-black"
+	let btnTabClassTrade = TradeDisplay == "block" ? "bg-black-active" : "bg-black"
+	let btnTabClassLiquidity = LiquidityDisplay == "block" ? "bg-black-active" : "bg-black"
+	let btnTabClassStaking = StakingDisplay == "block" ? "bg-black-active" : "bg-black"
+
+	function changeTab(tab = "assets") {
+		tab == "assets" ? AssetDisplay = "block" : AssetDisplay = "none"
+		tab == "trade" ? TradeDisplay = "block" : TradeDisplay = "none"
+		tab == "assets" ? LiquidityDisplay = "block" : LiquidityDisplay = "none"
+		tab == "trade" ? StakingDisplay = "block" : StakingDisplay = "none"
+
+		btnTabClassAsset = AssetDisplay == "block" ? "bg-black-active" : "bg-black"
+		btnTabClassTrade = TradeDisplay == "block" ? "bg-black-active" : "bg-black"
+		btnTabClassLiquidity = LiquidityDisplay == "block" ? "bg-black-active" : "bg-black"
+		btnTabClassStaking = StakingDisplay == "block" ? "bg-black-active" : "bg-black"
+	}
 </script>
 
 <svelte:head>
@@ -15,31 +40,18 @@
 <section>
 	<div>
 		<ButtonGroup>
-			<ButtonGroupItem btnClass="bg-black-active">Assets</ButtonGroupItem>
-			<ButtonGroupItem btnClass="bg-black">Liquidity</ButtonGroupItem>
-			<ButtonGroupItem btnClass="bg-black">Staking</ButtonGroupItem>
+			<ButtonGroupItem on:click={() => changeTab("assets")} btnClass="{btnTabClassAsset}">Assets</ButtonGroupItem>
+			<ButtonGroupItem on:click={() => changeTab("trade")} btnClass="{btnTabClassTrade}">Trade</ButtonGroupItem>
+			<ButtonGroupItem on:click={() => changeTab("liquidity")} btnClass="bg-black">Liquidity</ButtonGroupItem>
+			<ButtonGroupItem on:click={() => changeTab("staking")} btnClass="bg-black">Staking</ButtonGroupItem>
 		</ButtonGroup>
-		<div class="total-div">
-			<h3 class="faded-white">Total</h3>
-			<h2 class="price-header">$2,502.45</h2>
-		</div>
-		<div>
-			<Table />
-		</div>
+
+		<div style="display: {AssetDisplay};"><Assets/></div>
+		<div style="display: {TradeDisplay};"><Trade/></div>
+		<div style="display: {LiquidityDisplay};"><Liquidity/></div>
+		<div style="display: {StakingDisplay};"><Staking/></div>
 	</div>
 </section>
 
 <style>
-	.price-header {
-		color: white;
-		font-weight: bold;
-		font-size: 40px;
-		text-align: left;
-	}
-	.faded-white {
-		color: rgba(255, 255, 255, 0.493);
-	}
-	.total-div {
-		margin-top: 15px;
-	}
 </style>
