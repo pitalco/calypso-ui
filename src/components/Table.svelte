@@ -5,17 +5,25 @@
 <script>
     // @ts-nocheck
     import SvelteTable from "svelte-table";
-    import { goto } from '$app/navigation';
     /**
     * @type {Object[]}
     */
     const rows = [
-        { asset: "ATOM", owned: 56, price: "$7.54", total: "$1,045" },
+        { chain: "Osmosis", asset: "ATOM", owned: 56, price: "$7.54", total: "$1,045.00" },
+        { chain: "Juno", asset: "JUNO", owned: 1, price: "$10.24", total: "$10.24" },
+        { chain: "Secret", asset: "SCRT", owned: 100, price: "$0.64", total: "$64.00" },
     ];
     /**
     * @type {Object[]}
     */
     const columns = [
+        {
+            key: "chain",
+            title: "Chain",
+            // @ts-ignore
+            value: v => v.chain,
+            sortable: true,
+        },
         {
             key: "asset",
             title: "Asset",

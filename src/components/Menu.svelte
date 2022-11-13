@@ -4,7 +4,7 @@
 
 <script>
     import { Sidebar, SidebarWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
-    import { ChartPie, ViewGrid, InboxIn, User, Login, Cog } from "svelte-heros";
+    import { ChartPie, ViewGrid, InboxIn, User, Cog } from "svelte-heros";
 </script>
 
 <aside class="menu is-vcentered">

@@ -12,13 +12,8 @@
 </header>
 
 <main>
-	<div class="columns">
-		<div>
-			<Menu />
-		</div>
-		<div class="main-section">
-			<slot />
-		</div>
+	<div class="main-section">
+		<slot />
 	</div>
 </main>
 

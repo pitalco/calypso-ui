@@ -42,8 +42,8 @@
 		<ButtonGroup>
 			<ButtonGroupItem on:click={() => changeTab("assets")} btnClass="{btnTabClassAsset}">Assets</ButtonGroupItem>
 			<ButtonGroupItem on:click={() => changeTab("trade")} btnClass="{btnTabClassTrade}">Trade</ButtonGroupItem>
-			<ButtonGroupItem on:click={() => changeTab("liquidity")} btnClass="bg-black">Liquidity</ButtonGroupItem>
-			<ButtonGroupItem on:click={() => changeTab("staking")} btnClass="bg-black">Staking</ButtonGroupItem>
+			<ButtonGroupItem on:click={() => changeTab("liquidity")} btnClass="{btnTabClassLiquidity}">Liquidity</ButtonGroupItem>
+			<ButtonGroupItem on:click={() => changeTab("staking")} btnClass="{btnTabClassStaking}">Staking</ButtonGroupItem>
 		</ButtonGroup>
 
 		<div style="display: {AssetDisplay};"><Assets/></div>
